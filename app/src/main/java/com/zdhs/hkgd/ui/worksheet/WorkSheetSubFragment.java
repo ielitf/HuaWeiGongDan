@@ -2,6 +2,7 @@ package com.zdhs.hkgd.ui.worksheet;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -46,7 +47,8 @@ public class WorkSheetSubFragment extends Fragment {
         newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(context,"正在准备中。。。",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context,SheetDetailActivity.class);
+                startActivity(intent);
             }
         });
 

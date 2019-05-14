@@ -27,4 +27,33 @@
         <item name="android:paddingLeft">5dp</item>
         <item name="android:paddingRight">5dp</item>
     </style>
+    <style name="dot1_styles" >
+        <item name="android:background">@drawable/bg_circle_dot</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+    <style name="dot2_styles" >
+        <item name="android:background">@drawable/bg_circle_dot2</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+    <style name="line1_styles">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/line1</item>
+    </style>
+    <style name="line2_styles">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/line2</item>
+    </style>
+    <style name="sheet_state_text_styles">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

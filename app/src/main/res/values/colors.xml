@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#24A1FF</color>
 
     <!-- 透明 -->
     <color name="transparent">#00000000</color>
@@ -26,6 +26,13 @@
     <color name="item_title_color">#101010</color>
     <!-- item_间隔颜色 -->
     <color name="item_divide_color">#D5D5D5</color>
+
+    <!-- 工单详情里面的字体颜色 -->
+    <color name="sheet_detail_text1">#A2A1A1</color>
+    <color name="sheet_detail_text2">#101010</color>
+    <color name="sheet_detail_text3">#0065B1</color>
+    <color name="line1">#24A1FF</color>
+    <color name="line2">#D5D5D5</color>
 
 
 
