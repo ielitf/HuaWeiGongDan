@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">华为环控</string>
+    <string name="main_main">首页</string>
+    <string name="main_work_sheet">工单</string>
+    <string name="main_news">消息</string>
+    <string name="main_me">我的</string>
+
+</resources>

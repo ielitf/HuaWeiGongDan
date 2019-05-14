@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0.5dp"
+    android:layout_marginBottom="0.1dp"
+    android:paddingTop="13dp"
+    android:paddingBottom="13dp"
+    android:background="@color/item_back_color"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+         >
+        <TextView
+            android:id="@+id/item_news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知"
+            android:textColor="@color/item_title_color"
+             />
+        <TextView
+            android:id="@+id/item_news_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="5分钟前"
+            android:textColor="@color/item_title_color"
+             />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/item_news_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="您有一个订单编号为1234的订单已经完成审核，请注意查收"
+        />
+
+</LinearLayout>
