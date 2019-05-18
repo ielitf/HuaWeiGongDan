@@ -1,18 +1,14 @@
 package com.zdhs.hkgd.adapter;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.zdhs.hkgd.R;
-import com.zdhs.hkgd.entity.WorkSheetBean;
-import com.zdhs.hkgd.entity.WorkSheetBean;
+import com.zdhs.hkgd.bean.WorkSheetBean;
 
 import java.util.ArrayList;
 

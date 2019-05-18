@@ -1,4 +1,4 @@
-package com.zdhs.hkgd.entity;
+package com.zdhs.hkgd.bean;
 
 
 public class CommonBean {

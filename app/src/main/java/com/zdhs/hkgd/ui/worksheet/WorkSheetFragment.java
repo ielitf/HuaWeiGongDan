@@ -1,7 +1,10 @@
 package com.zdhs.hkgd.ui.worksheet;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -11,8 +14,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.zdhs.hkgd.R;
+import com.zdhs.hkgd.myinterface.FragmentInteractionListener;
 import com.zdhs.hkgd.ui.me.MeFragment;
 import com.zdhs.hkgd.widget.SmartTab.SmartTabLayout;
 import com.zdhs.hkgd.widget.SmartTab.UtilsV4.v4.FragmentPagerItem;
@@ -22,11 +27,12 @@ import com.zdhs.hkgd.widget.SmartTab.UtilsV4.v4.FragmentPagerItems;
 /**
  * 工单
  */
-public class WorkSheetFragment extends Fragment {
+public class WorkSheetFragment extends Fragment{
     protected View contentView;
     private Context context;
     private SearchView searchView;
     private ListView textListView;
+    private TextView work_sheet_sum_num;
     private String[] searchStrs = {"aaa", "bbb", "ccc", "airsaid"};
     private String[] stateTitles = {"全部", "待接单", "待预约","待维修","已完成"};//标题内容
     private String[] titles = new String[5];
@@ -34,10 +40,45 @@ public class WorkSheetFragment extends Fragment {
     private ViewGroup tab;//导航条
     private ViewPager viewPager;
     private SmartTabLayout viewPagerTab;
+    private static  int position = 0;
+    private static  int getPosition = 0;
+    private static  int myPosition = 0;
+    private static boolean isClick = false;
+    private Handler handler = new Handler() {
 
-    public WorkSheetFragment() {
+        // 处理消息
+        public void handleMessage(Message msg) {
+            String text = (String) msg.obj;
+            switch (msg.what) {
+                case 1:
+                    if(myPosition == getPosition){
+                        position = getPosition;
+                    }else{
+                        position = myPosition;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            viewPager.setCurrentItem(position);
+        }
+
+    };
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden) {   // 不在最前端显示 相当于调用了onPause();
+            myPosition = viewPager.getCurrentItem();
+            return;
+        }else{  // 在最前端显示 相当于调用了onResume();
+            //网络数据刷新
+            getPosition = getArguments().getInt("position",0);
+//                isClick = getArguments().getBoolean("isClick",false);
+            Log.d("=========","WorkSheetFragment onHiddenChanged position = :"+position);
+            handler.sendEmptyMessage(1);
+
+        }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,8 +97,10 @@ public class WorkSheetFragment extends Fragment {
                 getFragmentManager(), pages);
 
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(0);
+        getPosition = getArguments().getInt("position",0);
+//        isClick = getArguments().getBoolean("isClick",false);
         viewPagerTab.setViewPager(viewPager);
+        viewPager.setCurrentItem(0);
 
         searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +132,7 @@ public class WorkSheetFragment extends Fragment {
     }
 
     private void initviews(View contentView) {
+        work_sheet_sum_num = contentView.findViewById(R.id.work_sheet_sum_num);
         tab = contentView.findViewById(R.id.tab);
         viewPager = contentView.findViewById(R.id.work_sheet_viewpager);
         searchView = contentView.findViewById(R.id.search_bar);

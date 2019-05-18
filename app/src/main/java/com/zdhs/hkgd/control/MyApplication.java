@@ -7,6 +7,13 @@ import android.content.res.Configuration;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cache.CacheEntity;
+import com.lzy.okgo.cache.CacheMode;
+import com.lzy.okgo.cookie.store.PersistentCookieStore;
+
+import java.util.logging.Level;
+
 /**
  * @类 :自定义application
  */
@@ -22,6 +29,13 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        OkGo.init(this);
+        OkGo.getInstance().setConnectTimeout(3000)
+                .setReadTimeOut(3000)
+                .setWriteTimeOut(3000)
+                .setCacheMode(CacheMode.IF_NONE_CACHE_REQUEST)
+                .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)
+                .setRetryCount(3);
     }
 
     @Override

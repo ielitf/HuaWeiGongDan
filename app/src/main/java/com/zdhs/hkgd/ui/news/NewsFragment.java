@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.zdhs.hkgd.R;
 import com.zdhs.hkgd.adapter.NewsAdapter;
 import com.zdhs.hkgd.data.VirtualData;
-import com.zdhs.hkgd.entity.CommonBean;
+import com.zdhs.hkgd.bean.CommonBean;
 import com.zdhs.hkgd.widget.NoScrollListView;
 
 import java.util.ArrayList;

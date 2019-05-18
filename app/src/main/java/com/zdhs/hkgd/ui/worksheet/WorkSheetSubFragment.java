@@ -10,15 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.zdhs.hkgd.R;
-import com.zdhs.hkgd.adapter.NewsAdapter;
 import com.zdhs.hkgd.adapter.WorkSheetDetailAdapter;
 import com.zdhs.hkgd.data.VirtualData;
-import com.zdhs.hkgd.entity.CommonBean;
-import com.zdhs.hkgd.entity.WorkSheetBean;
-import com.zdhs.hkgd.widget.NoScrollListView;
+import com.zdhs.hkgd.bean.WorkSheetBean;
 
 import java.util.ArrayList;
 

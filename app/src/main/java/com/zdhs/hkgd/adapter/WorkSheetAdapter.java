@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.zdhs.hkgd.R;
-import com.zdhs.hkgd.entity.CommonBean;
+import com.zdhs.hkgd.bean.CommonBean;
 import java.util.ArrayList;
 
 public class WorkSheetAdapter extends MyBaseAdapter<CommonBean> {
